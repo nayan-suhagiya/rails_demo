@@ -1,0 +1,38 @@
+
+<p style="color: green"><%= notice %></p>
+
+<div class="d-flex justify-content-between">
+<h1>Employees</h1>
+<%= link_to "New employee", new_employee_path , class: %w(btn btn-sm btn-primary mt-3) %>
+</div>
+
+<div class="row">
+<%# <div id="employees"> %>
+  
+<%# </div> %>
+
+  <div class="col-sm-12">
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Mobile</th>
+          <th>Joining Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @employees.each do |employee| %>
+        <%= render employee %>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @employees %>
+  </div>
+</div>
+
+
+

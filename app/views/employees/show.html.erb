@@ -1,0 +1,44 @@
+
+<p style="color: green"><%= notice %></p>
+
+<div id="<%= dom_id @employee %>" class="col-sm-4">
+  <p>
+    <strong>Username:</strong>
+    <%= @employee.username %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @employee.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @employee.email %>
+  </p>
+
+  <p>
+    <strong>Password:</strong>
+    <%= @employee.password %>
+  </p>
+
+  <p>
+    <strong>Mobile:</strong>
+    <%= @employee.mobile %>
+  </p>
+
+  <p>
+    <strong>Joining date:</strong>
+    <%= @employee.joining_date %>
+  </p>
+
+</div>
+
+
+<div>
+  <%= link_to "Edit this employee", edit_employee_path(@employee) %> |
+  <%= link_to "Back to employees", employees_path %>
+
+  <%= button_to "Destroy this employee", @employee, method: :delete , class: %w(btn btn-danger mt-4) %>
+</div>
+

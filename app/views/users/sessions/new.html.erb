@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-5 m-auto center">
+  <h1 class="h3 mb-3 fw-normal">Please log in</h1>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <div class="form-floating">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: %w(form-control), id: 'floatingInput', placeholder: 'email@example.com' %>
+      <label for="floatingInput">Email address</label>
+    </div>
+
+    <div class="form-floating mt-4">
+      <%= f.password_field :password, autocomplete: "current-password", class: %w(form-control), id: 'floatingPassword', placeholder: 'Password' %>
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+    <div class="field mt-2">
+      <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+    </div>
+    <% end %>
+
+    <div class="actions"><%= f.submit "Log in", class: %w(btn btn-primary my-3) %></div>
+    <% end %> <%= render "users/shared/links" %>
+  </div>
+</div>

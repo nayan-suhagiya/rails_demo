@@ -17,3 +17,10 @@
 .d-flex > p {
   padding: 0px 20px;
 }
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
